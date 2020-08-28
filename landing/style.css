@@ -1,13 +1,14 @@
 /* Write some CSS below */
 
 body {
-    font-family: Overpass;
+    font-family: Chivo;
     color: #404040;
     font-size: 18px;
     margin: 0px;
 }
 
-h1,
+
+/* h1,
 h3 {
     color: #404040;
     font-family: Chivo;
@@ -16,13 +17,14 @@ h3 {
 h2 {
     color: #404040;
     font-family: Chivo;
+} */
+
+p {
+    font-family: Overpass;
 }
 
-a.card-white,
-a.card-white:hover {
-    color: inherit;
-    text-decoration: none;
-}
+
+/* banner */
 
 #banner {
     background-image: url('../landing/images/background.jpg');
@@ -30,27 +32,23 @@ a.card-white:hover {
     background-position: center;
     padding: 150px 0;
     text-align: center;
+    color: white;
+    /* animation-name: fade;
+    animation-duration: 1s; */
 }
 
 #banner h1 {
-    color: white;
     font-size: 45px;
     margin: 0px;
 }
 
 #banner p {
-    color: white;
     font-size: 24px;
     opacity: 0.7;
 }
 
-#footer {
-    background: #404040;
-    color: white;
-    padding: 10px 0px;
-    text-align: center;
-    margin: 5px auto;
-}
+
+/* button */
 
 .btn-blue {
     background-color: #1a48e3;
@@ -65,8 +63,11 @@ a.card-white:hover {
 
 .btn-blue:hover {
     background-color: #0d1ec6;
-    color: white;
+    transform: scale(1.05);
 }
+
+
+/* card */
 
 .card-white {
     background: white;
@@ -75,6 +76,8 @@ a.card-white:hover {
     padding: 24px;
     margin: 8px;
     flex-grow: 1;
+    color: inherit;
+    text-decoration: none;
 }
 
 .card-white:hover {
@@ -101,4 +104,63 @@ a.card-white:hover {
 .container {
     width: 900px;
     margin: 60px auto;
+}
+
+#footer {
+    background: #404040;
+    color: white;
+    padding: 10px 0px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+
+/* responsivity */
+
+@media (min-width: 300px) {
+    .container {
+        width: 400px;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 700px) {
+    .container {
+        width: 600px;
+    }
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        width: 900px;
+    }
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .typewriter {
+        animation: animated-text 4s steps(31, end);
+        animation-iteration-count: infinite;
+        display: inline-block;
+        white-space: nowrap;
+        letter-spacing: 1px;
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+
+/* typewriter animation */
+
+@keyframes animated-text {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
